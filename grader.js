@@ -1,7 +1,7 @@
 
-var letterGrader = function (num) {
+let letterGrader = (num) => {
 
-  var grade
+  let grade
 
   if (num === 100) {
     return 'A+'
@@ -30,19 +30,17 @@ var letterGrader = function (num) {
   return grade
 }
 
-var average = function (arr) {
-  var sum = arr.reduce(function (a, b) {
-    return a + b
-  }, 0)
+let average = (arr) => {
+  let sum = arr.reduce((a, b) => a + b, 0)
 
-  var ave = sum / arr.length
+  let ave = sum / arr.length
   return ave
 }
 
-var median = function (arr) {
+let median = (arr) => {
 
   arr.sort()
-  var index
+  let index
 
   if (arr.length === 1) {
     return arr[0]
@@ -57,13 +55,13 @@ var median = function (arr) {
 
 }
 
-var mode = function (arr) {
+let mode = (arr) => {
 
-  var obj = {}
-  var greatest = 0
-  var modeArray = []
+  let obj = {}
+  let greatest = 0
+  let modeArray = []
 
-  arr.forEach(function (elem, index) {
+  arr.forEach((elem, index) => {
 
     if (obj[elem] === undefined) {
       obj[elem] = 1
@@ -72,14 +70,13 @@ var mode = function (arr) {
       obj[elem] ++
 
       if (greatest <= obj[elem]) {
-
         greatest = obj[elem]
       }
     }
 
   })
 
-  for (var p in obj) {
+  for (let p in obj) {
     if (obj[p] === greatest) {
       modeArray.push(parseInt(p, 10))
     }
